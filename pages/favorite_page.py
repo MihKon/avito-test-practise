@@ -2,12 +2,10 @@ import time
 from pages.base_page import BasePage
 from locators.favorite_page_locator import FavoritePageLocators as Locators
 
-class FavoritesPage(BasePage):
-    
-    def add_favorite(self):
-        self.element_is_visible(Locators.FAVORITE_BTN).click()
-        time.sleep(2)
+class FavoritePage(BasePage):
 
-    def get_result(self):
-        btn = self.element_is_visible(Locators.FAVORITE_BTN)
-        return btn.text
+    def get_ads_list(self):
+        return self.element_is_visible(Locators.FAVORITE_ADS_LIST, 7)
+    
+    def get_categories(self):
+        return self.element_is_visible(Locators.ADS_CATEGORIES_NUM).text

@@ -2,14 +2,15 @@ from selenium.webdriver.common.by import By
 
 class FavoritePageLocators:
 
-    FAVORITE_BTN = (
+    FAVORITE_ADS_LIST = (
         By.XPATH,
-        '/html/body/div[1]/div/div[3]/div[1]/div/div[3]/'\
-        'div[4]/div[1]/div[1]/div/div[3]/div/div/div/div[1]/button'
+        '/html/body/div[1]/div/div[4]/div/div/'\
+        'favorite-items-list/div/div/div[1]/div[2]/div/div'
     )
 
-    # FAVORITE_ICON = (
-    #     By.XPATH,
-    #     '/html/body/div[1]/div/div[3]/div[1]/div/div[3]/'\
-    #     'div[4]/div[1]/div[1]/div/div[3]/div/div/div/div[1]/button/svg'
-    # )
+    ADS_CATEGORIES_NUM = (
+        By.XPATH,
+        '/html/body/div[1]/div/div[4]/div/div/'\
+        'favorite-items-list/div/div/div[1]/'\
+        'div[1]/div/div/div[1]/div/div/ul/li[1]/button'
+    )

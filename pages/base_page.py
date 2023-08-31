@@ -13,3 +13,8 @@ class BasePage:
         return WebDriverWait(self.driver, timeout).until(
             expected_conditions.visibility_of_element_located(locator)
         )
+    
+    def elements_are_visible(self, locator, timeout=5):
+        return WebDriverWait(self.driver, timeout).until(
+            expected_conditions.visibility_of_all_elements_located(locator)
+        )
