@@ -1,19 +1,19 @@
+import time
 from pages.ad_page import AdPage
 from pages.favorite_page import FavoritePage
 
-AD_LINK = 'https://www.avito.ru/moskva/vakansii/komplektovschikgruzchik_3287546788'
+AD_LINK = 'https://www.avito.ru/nikel/knigi_i_zhurnaly/domain-driven_design_distilled_vaughn_vernon_2639542363'
 
 class Test:
 
-    def test_1(self, driver):
+    def test(self, driver):
         ad = AdPage(driver, AD_LINK)
         ad.open()
-        ad.add_favorite()
-        btn_txt = ad.get_result()
+        btn_favorite = ad.add_favorite()
 
-        assert btn_txt == 'В избранном'
+        assert btn_favorite == 'true'
 
-        link = ad.get_link_to_favorites()
+        link = ad.get_link_to_favorites_icon()
         favorites = FavoritePage(driver, link)
         favorites.open()
         ads_list = favorites.get_ads_list()
@@ -23,15 +23,3 @@ class Test:
         categories_num = favorites.get_categories()
 
         assert int(categories_num[-1]) == 1
-
-    def test_2(self, driver):
-        pass
-
-    def test_3(self, driver):
-        pass
-
-    def test_4(self, driver):
-        pass
-
-    def test_5(self, driver):
-        pass
